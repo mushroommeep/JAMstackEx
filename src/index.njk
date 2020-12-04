@@ -1,5 +1,5 @@
 ---
-title: A page for you
+title: A page for you   
 layout: base.njk
 ---
  
@@ -11,5 +11,13 @@ layout: base.njk
         <div class="love">
             Hihi
         </div>
+
+        <ul>
+        {% for article in news.articles %}
+            <li><h1> <a href="{{ article.url }}">{{ article.title }} </a></h1></li>
+            <span>{{article.source.name}} - <time>{{article.publishedAt}}</time></span> 
+
+        {% endfor %} 
+        </ul>
 </div>
 <script src="/js/vibe.js"></script>
